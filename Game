@@ -1,0 +1,113 @@
+
+import java.util.Random;
+import java.util.Scanner;
+
+
+public class Game {
+
+    public static String gg_name = null;
+    public static double gg_hp = 100;
+    public static double gg_mp = 100;
+    public static double gg_st = 100;
+    public static double gg_def = 0.3;
+    public static double gg_dmg = 15.0;
+
+    public static String npc_0_name = "Bat";
+    public static double npc_0_hp = 100;
+    public static double npc_0_mp = 70;
+    public static double npc_0_st = 100;
+    public static double npc_0_def = 0.5;
+    public static double npc_0_dmg = 10.2;
+
+
+
+
+    public static void main(String[] args) {
+        System.out.println("Enter your name");
+        string(gg_name);
+        Game_Characters.nov(gg_name);
+    }
+
+    public static String string(String gg_name) {
+        Scanner scanner = new Scanner(System.in);
+        gg_name = scanner.next();
+        Game_Locations.start_location(gg_name);
+        return gg_name;
+    }
+
+    public static void help(String gg_name) {
+        System.out.println(" ");
+        System.out.println("well... " + gg_name + " listen to me... ");
+        System.out.println(" 'hit' to attack");
+        System.out.println(" 'def' to defence");
+        System.out.println(" 'svalyt' to avoiding the enemy");
+        System.out.println(" 'nu_naher' to exit");
+        System.out.println(" ");
+            fight_proccess(gg_name);
+    }
+
+    public static void fight_npc_0 (String gg_name){
+        Scanner scanner = new Scanner(System.in);
+        String hit;
+        Game_Characters.nov(gg_name);
+            System.out.println("Your enemy " + npc_0_name);
+            System.out.println("Your name " + gg_name);
+            System.out.println("Your HP " + gg_hp);
+            System.out.println("Enemy HP " + npc_0_hp);
+            System.out.println("\"hit\"");
+            System.out.println(" ");
+                fight_proccess(gg_name);
+
+    }
+        public static void fight_proccess(String gg_name){
+            boolean krit;
+            Scanner scanner = new Scanner(System.in);
+            Random random = new Random();
+            krit = random.nextBoolean();
+            String hit;
+            System.out.println("\"help\"");
+            hit = scanner.next();
+                if (hit.equals("hit")){
+                    gg_st -= 15;
+                    gg_hp = gg_hp - (npc_0_dmg - gg_def + (Math.random() * 5));
+                    npc_0_hp = npc_0_hp - (gg_dmg - npc_0_def + (Math.random() * 5));
+                        if(krit){
+                            npc_0_hp = npc_0_hp - (gg_dmg - npc_0_def + (Math.random() * 10));
+                            System.out.println(" ");
+                            System.out.println(" ");
+                            System.out.println("!!!Krit!!!!");
+                            System.out.println(" ");
+                        }
+                }
+                if (hit.equals("power_hit")){
+                    gg_st -= 25;
+                    gg_hp = gg_hp - (npc_0_dmg - gg_def);
+                    npc_0_hp = npc_0_hp - (gg_dmg - npc_0_def) * 1.5;
+                        if(krit){
+                            npc_0_hp = npc_0_hp - (gg_dmg - npc_0_def + (Math.random() * 15));
+                            System.out.println(" ");
+                            System.out.println(" ");
+                            System.out.println("!!!Mega Krit!!!!");
+                            System.out.println(" ");
+                    }
+                }
+                if (hit.equals("def")){
+
+                }
+                if (hit.equals("svalyt")){
+                    Game_Locations.choice(gg_name, gg_hp, gg_mp, gg_st);
+                }
+                if (hit.equals("help")){
+                    help(gg_name);
+                }
+                    if (npc_0_hp >= 0){
+                        fight_npc_0(gg_name);
+                    }
+                    if (npc_0_hp <= 0){
+                        Game_Locations.choice(gg_name, gg_hp, gg_mp, gg_st);
+                    }
+                    if (gg_hp <= 0){
+                        System.exit(1);
+                    }
+            }
+}
