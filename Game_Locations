@@ -1,0 +1,58 @@
+
+import java.util.Scanner;
+
+
+public class Game_Locations {
+
+    static String ch;
+    static Scanner scanner = new Scanner(System.in);
+
+    public Game_Locations() {
+
+
+    }
+    public static void start_location(String gg_name){
+        System.out.println("Hello " + gg_name);
+        System.out.println("\"go_to_fight\" to fight");
+        System.out.println("\"stop\" to out");
+        System.out.println("\"v_derevnu\" to village");
+        ch = scanner.next();
+        if (ch.equals("go_to_fight")) {
+            Game.fight_npc_0(gg_name);
+        }
+        if (ch.equals("stop")) {
+            System.exit(0);
+        }
+        if (ch.equals("v_derevnu")) {
+            choice(gg_name, Game.gg_hp, Game.gg_mp, Game.gg_st);
+        }
+        if (Game.gg_hp > 0){
+            start_location(gg_name);
+        }
+    }
+    public static void choice(String gg_name, double gg_hp, double gg_mp, double gg_st){
+        System.out.println("Your name " + gg_name);
+        System.out.println("Your hp " + gg_hp);
+        System.out.println("Your mp " + gg_mp);
+        System.out.println("Your st " + gg_st);
+        System.out.println("\"v_derevnu\" ");
+        System.out.println("\"stop\" to out");;
+        ch = scanner.next();
+        if (ch.equals("go_to_fight")) {
+            Game.fight_npc_0(gg_name);
+        }
+        if (ch.equals("stop")) {
+            System.exit(0);
+        }
+        if (ch.equals("v_derevnu")) {
+            the_edge_of_the_village(gg_name, Game.gg_hp, Game.gg_mp, Game.gg_st);
+        }
+        if (gg_hp > 0){
+            choice(gg_name, Game.gg_hp, Game.gg_mp, Game.gg_st);
+        }
+    }
+    public static void  the_edge_of_the_village(String gg_name, double gg_hp, double gg_mp, double gg_st ) {
+
+        System.out.println("you on the outskirts of the village");
+    }
+}
