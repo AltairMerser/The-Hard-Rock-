@@ -1,0 +1,73 @@
+package Game;
+
+import Game.Characters.GG;
+import Game.Game;
+import Game.Characters.Game_Characters;
+import Game.Locations.Game_Locations;
+
+public class Game_Fight_Win {
+
+    public static boolean npc_1_win = false;
+    public static boolean npc_2_win = false;
+    public static boolean npc_3_win = false;
+    public static boolean npc_4_win = false;
+    public static boolean npc_5_win = false;
+
+    public static void npc1_5_win(){
+        if (npc_1_win) {
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            npc_1_win = false;
+            GG.gg.xp += 1;
+            if(Game_Locations.new_game) {
+                Game_Locations.choice();
+            }
+            Game_Locations.village();
+        }
+        if (npc_2_win) {
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            Game_Locations.village();
+        }
+        if (npc_3_win) {
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            Game_Locations.village();
+        }
+        if (npc_4_win) {
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            Game_Locations.village();
+        }
+        if (npc_5_win) {
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            Game_Locations.village();
+        }
+    }
+}
