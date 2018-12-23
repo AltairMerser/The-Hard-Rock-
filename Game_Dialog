@@ -1,0 +1,86 @@
+package Game.Locations;
+
+import Game.Characters.GG;
+import Game.Characters.Game_Characters;
+
+import java.util.Scanner;
+
+public class Game_Dialog {
+
+    public static  String pr;
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void start_dialog(int r) {
+        if (r == 1) {
+            System.out.println("Здравствуй меня зовут " + Game_Characters.qnpc_1.name + " " + Game_Characters.qnpc_1.surname);
+            System.out.println("А как твое имя?");
+            System.out.println(" ");
+            System.out.println("\"да\" - Ответить \"нет\" - промолчать ");
+            pr = scanner.next();
+            if (pr.equals("да")){
+                System.out.println("Меня зовут " + GG.gg.name + " и я без понятия где я");
+                System.out.println("Вы не могли бы побольше рассказать об этом месте? ");
+                System.out.println(" ");
+                System.out.println("Не уж то после знатной попойки? ");
+                System.out.println("Ну ладно-ладно, не хочешь не рассказывай ");
+                System.out.println("ты в в самой отдаленной точке от столицы, какую можно найти ");
+                System.out.println("но тем она и прекраснее, тут нет этих занудных чистюль, зазнавшихся дворян... ");
+                System.out.println(" ");
+                System.out.println("Это все конечно очень познавательно, но все-таки где я?");
+                System.out.println(" ");
+                System.out.println("Ээээх, нетерпеливый, да? ");
+                System.out.println("Ну чтож ты стоишь на земле принадлежащей здешнему барону ");
+                System.out.println("Улдвигу Знатному ");
+                System.out.println("он владеет поместьем \"Бувлово\" ");
+                System.out.println(" ");
+                System.out.println("А тут есть ученые или другие важные личности которые могли бы знать откуда я прибыл? ");
+                System.out.println(" ");
+                System.out.println("А откуда ты прибыл? ");
+                System.out.println(" ");
+                System.out.println("А не важно.... ");
+                System.out.println("Как тут попасть до ближайшего населенного пункта ");
+                System.out.println(" ");
+                System.out.println("До чего?? ");
+                System.out.println(" ");
+                System.out.println("Деревня говорю, далеко? ");
+                System.out.println(" ");
+                System.out.println("А, нет, версты три, тут за полем речка, перейдешь ее, и так вдоль нее и иди.");
+                System.out.println("глядишь к вечеру и дойдешь");
+                System.out.println(" ");
+                System.out.println("\"прощай\" - попрощаться ");
+                System.out.println("\"имя\" - напомни еще раз как твое имя? ");
+                System.out.println(" ");
+                System.out.println(" ");
+                pr = scanner.next();
+                if (pr.equals("прощай")){
+
+                }
+                if (pr.equals("имя")){
+                    System.out.println("Как говоришь тебя зовут? ");
+                    System.out.println(" ");
+                    System.out.println("А, я " + Game_Characters.qnpc_1.name + " " + Game_Characters.qnpc_1.surname);
+                    System.out.println("Ежель что и я тебя запомнил " + GG.gg.name + " так что будешь в деревне, заглядывай в таверну");
+                    System.out.println("там много хороших людей встречается, может какую работу найдешь, иль расспросишь кого. ");
+                    System.out.println("Ну бывай вобщем ");
+                    System.out.println(" ");
+                    System.out.println("До встречи!! ");
+                    System.out.println(" ");
+                    System.out.println("/*Крикнули вы уходящему в дали силуэту, и решили отправиться в путь, ");
+                    System.out.println("да вот только вдоль речки направо, или, налево после того как перейдешь речку...../* ");
+                }
+                Game_Locations.a = 0;
+            }
+            if (pr.equals("нет")){
+                System.out.println(" ");
+                System.out.println(" ");
+                System.out.println(" ");
+                System.out.println(" ");
+            }
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            Game_Locations.new_game = false;
+            Game_Locations.village();
+        }
+    }
+}
