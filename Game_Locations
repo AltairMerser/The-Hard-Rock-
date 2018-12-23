@@ -1,9 +1,17 @@
+package Game.Locations;
+
+import Game.Characters.GG;
+import Game.Game;
+import Game.Characters.Game_Characters;
 
 import java.util.Scanner;
 
 
 public class Game_Locations {
 
+    public static boolean new_game = true;
+    public static boolean rename = true;
+    public static int a = 0;
     static String ch;
     static Scanner scanner = new Scanner(System.in);
 
@@ -11,48 +19,96 @@ public class Game_Locations {
 
 
     }
-    public static void start_location(String gg_name){
-        System.out.println("Hello " + gg_name);
-        System.out.println("\"go_to_fight\" to fight");
-        System.out.println("\"stop\" to out");
-        System.out.println("\"v_derevnu\" to village");
-        ch = scanner.next();
-        if (ch.equals("go_to_fight")) {
-            Game.fight_npc_0(gg_name);
-        }
-        if (ch.equals("stop")) {
-            System.exit(0);
-        }
-        if (ch.equals("v_derevnu")) {
-            choice(gg_name, Game.gg_hp, Game.gg_mp, Game.gg_st);
-        }
-        if (Game.gg_hp > 0){
-            start_location(gg_name);
-        }
-    }
-    public static void choice(String gg_name, double gg_hp, double gg_mp, double gg_st){
-        System.out.println("Your name " + gg_name);
-        System.out.println("Your hp " + gg_hp);
-        System.out.println("Your mp " + gg_mp);
-        System.out.println("Your st " + gg_st);
-        System.out.println("\"v_derevnu\" ");
-        System.out.println("\"stop\" to out");;
-        ch = scanner.next();
-        if (ch.equals("go_to_fight")) {
-            Game.fight_npc_0(gg_name);
-        }
-        if (ch.equals("stop")) {
-            System.exit(0);
-        }
-        if (ch.equals("v_derevnu")) {
-            the_edge_of_the_village(gg_name, Game.gg_hp, Game.gg_mp, Game.gg_st);
-        }
-        if (gg_hp > 0){
-            choice(gg_name, Game.gg_hp, Game.gg_mp, Game.gg_st);
-        }
-    }
-    public static void  the_edge_of_the_village(String gg_name, double gg_hp, double gg_mp, double gg_st ) {
 
-        System.out.println("you on the outskirts of the village");
+    public static void start_location(String gg_name) {
+        System.out.println("Здравствуй " + gg_name + " я направил тебя в этот мир для того, чтобы.....эээээ....ну короче пока.");
+        System.out.println("\"в_битву\" я без понятия где я и из-за этого я хочу кого-нибудь убить. ");
+        System.out.println("\"стоп\" куда я попал..... хм... а зачем тут эта кнопка ? .......");
+        System.out.println("\"идти\" направиться в сторону реки");
+        ch = scanner.next();
+        if (ch.equals("в_битву")) {
+            Game.npc_1 = true;
+            Game.fight_npc_outset();
+        }
+        if (ch.equals("стоп")) {
+            System.exit(0);
+        }
+        if (ch.equals("идти")) {
+            choice();
+        }
+        if (GG.gg.hp > 0) {
+            if (new_game) {
+                start_location(gg_name);
+            }
+        }
+    }
+
+    public static void choice() {
+        System.out.println("Твое имя " + GG.gg.name);
+        System.out.println("Твое здоровье " + GG.gg.hp);
+        System.out.println("Твоя мана " + GG.gg.mp);
+        System.out.println("Твоя выносливость " + GG.gg.st);
+        System.out.println("\"в_деревню\" - направиться в деревню ");
+        System.out.println("\"стоп\" - и все же куда я попал? хм... а зачем тут эта кнопка ? .......");
+        ch = scanner.next();
+        if (ch.equals("в_битву")) {
+            Game.fight_npc_outset();
+        }
+        if (ch.equals("стоп")) {
+            System.exit(0);
+        }
+        if (ch.equals("в_деревню")) {
+            the_edge_of_the_village();
+            double r = Math.random() * 2;
+            a = (int) r;
+        }
+        if (GG.gg.hp > 0) {
+            choice();
+        }
+    }
+
+    public static void the_rename_point() {
+
+        System.out.println(new_game);
+        System.out.println(rename);
+        System.out.println(" \"переименовать_гг\" чтобы переименовать героя");
+        ch = scanner.next();
+        if (ch.equals("переименовать_гг")) {
+            rename = false;
+            nami();
+        }else {
+            if(new_game) {
+                rename = false;
+                the_edge_of_the_village();
+            }else {
+                rename = false;
+                village();
+            }
+          }
+        }
+    public static void nami() {
+        Scanner scanner = new Scanner(System.in);
+        GG.gg.name = scanner.next();
+        if (new_game) {
+            the_edge_of_the_village();
+        } else {
+            village();
+        }
+    }
+    public static void the_edge_of_the_village() {
+        System.out.println("Вы на окраине деревни");
+        if (rename) {
+            the_rename_point();
+        }
+        if (new_game) {
+            System.out.println(a);
+            Game_Dialog.start_dialog(a);
+        }else{
+            village();
+        }
+    }
+    public static void village(){
+
+        System.exit(0);
     }
 }
