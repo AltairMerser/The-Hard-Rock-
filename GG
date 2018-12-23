@@ -1,0 +1,101 @@
+package Game.Characters;
+
+public class GG {
+
+    public static Gg gg = new Gg();
+
+    public static class Gg{
+
+        public static String name;
+        public static double hp;
+        public static double mp;
+        public static double st;
+        public static double def;
+        public static double dmg;
+        public static double max_hp;
+        public static double max_mp;
+        public static double max_st;
+        public static double xp;
+        public static int lv;
+
+
+        public Gg(){
+            gg.name = null;
+            gg.hp = 100.0;
+            gg.max_hp = 100.0;
+            gg.mp = 100.0;
+            gg.max_mp = 100.0;
+            gg.st = 100.0;
+            gg.max_st = 100.0;
+            gg.def = 0.3;
+            gg.dmg = 10.0;
+            gg.xp = 0.0;
+            gg.lv = 0;
+
+            if (gg.xp >= 3){
+                gg.lv += 1;
+                gg.max_hp += 10;
+                gg.max_mp += 10;
+                gg.max_st += 10;
+                gg.def += 0.2;
+                gg.dmg += 0.5;
+            }
+            if (gg.xp >= 7){
+                gg.lv += 1;
+                gg.max_hp += 15;
+                gg.max_mp += 15;
+                gg.max_st += 15;
+                gg.def += 0.4;
+                gg.dmg += 1.5;
+            }
+            if (gg.xp >= 12){
+                gg.lv += 1;
+                gg.max_hp += 20;
+                gg.max_mp += 20;
+                gg.max_st += 20;
+                gg.def += 0.6;
+                gg.dmg += 2.5;
+            }
+            if (gg.xp >= 17){
+                gg.lv += 1;
+                gg.max_hp += 30;
+                gg.max_mp += 30;
+                gg.max_st += 30;
+                gg.def += 1.2;
+                gg.dmg += 3.5;
+            }
+            if (gg.xp >= 25){
+                gg.lv += 1;
+                gg.max_hp += 40;
+                gg.max_mp += 40;
+                gg.max_st += 40;
+                gg.def += 1.8;
+                gg.dmg += 5.0;
+            }
+            if (gg.xp >= 33){
+                gg.lv += 1;
+                gg.max_hp += 30;
+                gg.max_mp += 30;
+                gg.max_st += 30;
+                gg.def += 2.2;
+                gg.dmg += 6.5;
+            }
+            if (gg.xp >= 40){
+                gg.lv += 1;
+                gg.max_hp += 20;
+                gg.max_mp += 20;
+                gg.max_st += 20;
+                gg.def += 2.2;
+                gg.dmg += 12.5;
+            }
+            if (gg.xp >= 3){
+                gg.max_hp += 50;
+                gg.max_mp += 50;
+                gg.max_st += 50;
+                gg.def += 10.2;
+                gg.dmg += 0.5;
+                gg.lv += 1;
+            }
+        }
+    }
+}
