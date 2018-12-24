@@ -8,115 +8,60 @@ public class Game_Characters {
     public static Npc npc3 = new Npc();
     public static Npc npc4 = new Npc();
     public static Npc npc5 = new Npc();
-    public static Npc npc6 = new Npc();
-    public static Npc npc7 = new Npc();
-    public static Npc npc8 = new Npc();
-    public static Npc npc9 = new Npc();
-    public static Npc npc10 = new Npc();
 
     public static Quest_Npc qnpc_1 = new Quest_Npc();
     public static Quest_Npc qnpc_2 = new Quest_Npc();
     public static Quest_Npc qnpc_3 = new Quest_Npc();
     public static Quest_Npc qnpc_4 = new Quest_Npc();
-    public static Quest_Npc qnpc_5 = new Quest_Npc();
-    public static Quest_Npc qnpc_6 = new Quest_Npc();
-    public static Quest_Npc qnpc_7 = new Quest_Npc();
-    public static Quest_Npc qnpc_8 = new Quest_Npc();
-    public static Quest_Npc qnpc_9 = new Quest_Npc();
-    public static Quest_Npc qnpc_10 = new Quest_Npc();
+
 
 
     public static class Npc{
 
-          public static String name;
-          public static double hp;
-          public static double mp;
-          public static double st;
-          public static double def;
-          public static double dmg;
-          public static double max_hp;
+        public static String name = "Летучая мышь";
+        public static double hp = 100.0;
+        public static double max_hp = 100.0;
+        public static double def = 5.5;
+        public static double dmg = 5.0;
 
+        public static String name2 = "Змея";
+        public static double hp2 = 80.0;
+        public static double max_hp2 = 80.0;
+        public static double def2 = 8.0;
+        public static double dmg2 = 14.0;
 
+        public static String name3 = "Черепаха";
+        public static double hp3 = 470.0;
+        public static double max_hp3 = 470.0;
+        public static double def3 = 10.5;
+        public static double dmg3 = 7.0;
 
-        public Npc(){
-            npc1.name = "Bat";
-            npc1.hp = 100.0;
-            npc1.def = 0.5;
-            npc1.max_hp = 100.0;
-            npc1.dmg = 5.0;
+        public static String name4 = "Бездомный";
+        public static double hp4 = 120.0;
+        public static double max_hp4 = 120.0;
+        public static double def4 = 6.1;
+        public static double dmg4 = 18.0;
 
-            npc2.name = "Змея";
-            npc2.hp = 80.0;
-            npc2.def = 0.3;
-            npc2.dmg = 8.0;
-
-            npc3.name = "Черепаха";
-            npc3.hp = 170.0;
-            npc3.def = 2.5;
-            npc3.dmg = 5.0;
-
-            npc4.name = "Дворняга";
-            npc4.hp = 110.0;
-            npc4.def = 0.1;
-            npc4.dmg = 10.0;
-
-            npc5.name = "Бродяга";
-            npc5.hp = 125.0;
-            npc5.def = 1.5;
-            npc5.dmg = 7.0;
-
-            npc6.name = "";
-            npc6.hp = 100.0;
-            npc6.mp = 70.0;
-            npc6.st = 100.0;
-            npc6.def = 0.5;
-            npc6.dmg = 5.0;
-
-            npc7.name = "";
-            npc7.hp = 100.0;
-            npc7.mp = 70.0;
-            npc7.st = 100.0;
-            npc7.def = 0.5;
-            npc7.dmg = 5.0;
-
-            npc8.name = "";
-            npc8.hp = 100.0;
-            npc8.mp = 70.0;
-            npc8.st = 100.0;
-            npc8.def = 0.5;
-            npc8.dmg = 5.0;
-        }
-
+        public static String name5 = "Бродяга";
+        public static double hp5 = 175.0;
+        public static double max_hp5 = 175.0;
+        public static double def5 = 18.5;
+        public static double dmg5 = 27.0;
     }
-
 
 
     public static class Quest_Npc{
 
-        public static String name;
-        public static String surname;
+        public static String name = "Нифрас";
+        public static String surname = "Форс";
 
-        public Quest_Npc(){
-            qnpc_1.name = "Bart";
-            qnpc_1.surname = "Vernon";
-            qnpc_2.name = "Stuart";
-            qnpc_2.surname = "Vernon";
-            qnpc_3.name = "Jou";
-            qnpc_3.surname = "Vernon";
-            qnpc_4.name = "Gomer";
-            qnpc_4.surname = "Vernon";
-            qnpc_5.name = "Bart";
-            qnpc_5.surname = "Vernon";
-            qnpc_6.name = "Bart";
-            qnpc_6.surname = "Vernon";
-            qnpc_7.name = "Bart";
-            qnpc_7.surname = "Vernon";
-            qnpc_8.name = "Bart";
-            qnpc_8.surname = "Vernon";
-            qnpc_9.name = "Bart";
-            qnpc_9.surname = "Vernon";
-            qnpc_10.name = "Bart";
-            qnpc_10.surname = "Vernon";
-        }
+        public static String name2 = "Остроп";
+        public static String surname2 = "Кренд";
+
+        public static String name3 = "Исторф";
+        public static String surname3 = "Торне";
+
+        public static String name4 = "Улдвиг";
+        public static String surname4 = "Знатный";
     }
 }
