@@ -37,6 +37,7 @@ public class Game_Dialog {
                 System.out.println("Меня зовут " + GG.gg.name + " и я без понятия где я");
                 System.out.println("Вы не могли бы побольше рассказать об этом месте? ");
                 System.out.println(" ");
+                System.out.println("Хммм....довольно странное имя для наших краев, ну да и шут бы с ним. ");
                 System.out.println("Не уж то после знатной попойки? ");
                 System.out.println("Ну ладно-ладно, не хочешь не рассказывай ");
                 System.out.println("ты в в самой отдаленной точке от столицы, какую можно найти ");
