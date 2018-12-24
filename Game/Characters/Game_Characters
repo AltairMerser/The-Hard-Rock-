@@ -1,0 +1,67 @@
+package Game.Characters;
+
+public class Game_Characters {
+
+
+    public static Npc npc1 = new Npc();
+    public static Npc npc2 = new Npc();
+    public static Npc npc3 = new Npc();
+    public static Npc npc4 = new Npc();
+    public static Npc npc5 = new Npc();
+
+    public static Quest_Npc qnpc_1 = new Quest_Npc();
+    public static Quest_Npc qnpc_2 = new Quest_Npc();
+    public static Quest_Npc qnpc_3 = new Quest_Npc();
+    public static Quest_Npc qnpc_4 = new Quest_Npc();
+
+
+
+    public static class Npc{
+
+        public static String name = "Летучая мышь";
+        public static double hp = 100.0;
+        public static double max_hp = 100.0;
+        public static double def = 5.5;
+        public static double dmg = 5.0;
+
+        public static String name2 = "Змея";
+        public static double hp2 = 80.0;
+        public static double max_hp2 = 80.0;
+        public static double def2 = 8.0;
+        public static double dmg2 = 14.0;
+
+        public static String name3 = "Черепаха";
+        public static double hp3 = 470.0;
+        public static double max_hp3 = 470.0;
+        public static double def3 = 10.5;
+        public static double dmg3 = 7.0;
+
+        public static String name4 = "Бездомный";
+        public static double hp4 = 120.0;
+        public static double max_hp4 = 120.0;
+        public static double def4 = 6.1;
+        public static double dmg4 = 18.0;
+
+        public static String name5 = "Бродяга";
+        public static double hp5 = 175.0;
+        public static double max_hp5 = 175.0;
+        public static double def5 = 18.5;
+        public static double dmg5 = 27.0;
+    }
+
+
+    public static class Quest_Npc{
+
+        public static String name = "Нифрас";
+        public static String surname = "Форс";
+
+        public static String name2 = "Остроп";
+        public static String surname2 = "Кренд";
+
+        public static String name3 = "Исторф";
+        public static String surname3 = "Торне";
+
+        public static String name4 = "Улдвиг";
+        public static String surname4 = "Знатный";
+    }
+}
