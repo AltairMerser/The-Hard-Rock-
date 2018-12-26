@@ -1,14 +1,12 @@
 package Game.Characters;
 
-import Game.Game_Fight_Win;
-import Game.Locations.Game_Locations;
-
 import static Game.Characters.GG.gg;
 import static Game.Characters.Game_Characters.npc1;
 import static Game.Characters.Game_Characters.npc2;
 import static Game.Characters.Game_Characters.npc3;
 import static Game.Characters.Game_Characters.npc4;
 import static Game.Characters.Game_Characters.npc5;
+import static Game.Locations.Game_pre_Locations.Outset_Location.choice;
 
 
 public class Npc_Power_Up {
@@ -50,7 +48,7 @@ public class Npc_Power_Up {
 
                 lv_up = false;
                 lv_r += 1;
-                Game_Locations.choice();
+                choice();
             }
             if (gg.lv == 2 && gg.lv_2 && lv_r == 2) {
 
@@ -82,7 +80,7 @@ public class Npc_Power_Up {
 
                 lv_up = false;
                 lv_r += 1;
-                Game_Locations.choice();
+                choice();
             }
             if (gg.lv == 3 && gg.lv_3 && lv_r == 3) {
 
@@ -114,7 +112,7 @@ public class Npc_Power_Up {
 
                 lv_up = false;
                 lv_r += 1;
-                Game_Locations.choice();
+                choice();
             }
             if (gg.lv == 4 && gg.lv_4 && lv_r == 4) {
 
@@ -146,7 +144,7 @@ public class Npc_Power_Up {
 
                 lv_up = false;
                 lv_r += 1;
-                Game_Locations.choice();
+                choice();
             }
             if (gg.lv == 5 && gg.lv_5 && lv_r == 5) {
 
@@ -178,10 +176,10 @@ public class Npc_Power_Up {
 
                 lv_up = false;
                 lv_r += 1;
-                Game_Locations.choice();
+                choice();
             }
         }
         lv_up = false;
-        Game_Locations.choice();
+        choice();
     }
 }
