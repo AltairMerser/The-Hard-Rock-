@@ -1,0 +1,135 @@
+package Game.Locations.Game_pre_Locations;
+
+import Game.Characters.GG;
+import Game.Characters.Game_Characters;
+import Game.Game_Field.Game_Field_Outset.Game_Outset;
+
+import java.util.Scanner;
+
+import static Game.Characters.GG.gg;
+import static Game.Characters.GG.*;
+import static Game.Characters.Game_Characters.*;
+import static Game.Characters.Game_Characters.npc3;
+import static Game.Characters.Game_Characters.npc5;
+import static Game.Game_Field.Game_Field_Outset.Game_Outset.*;
+import static Game.Game_Field.Game_Field_Outset.Game_Outset.npc_4;
+import static Game.Game_Field.Game_Field_Outset.Game_Outset.npc_5;
+import static Game.Locations.Game_Locations.start_location;
+import static Game.Locations.Game_Locations.the_edge_of_the_village;
+import static Game.Locations.Game_Locations.a;
+
+public class Outset_Location {
+
+    public static Scanner scanner = new Scanner(System.in);
+    public static String th;
+
+    public static void choice() {
+        System.out.println("Ваше имя " + gg.name);
+        System.out.println("Ваше здоровье " + gg.hp);
+        System.out.println("Ваша мана " + gg.mp);
+        System.out.println("Ваша выносливость " + gg.st);
+        System.out.println("\"в_деревню\" - направиться в деревню ");
+        System.out.println("\"в_битву_с\" - подраться с.. ");
+        System.out.println("\"стоп\" - и все же куда я попал? хм... а зачем тут эта кнопка ? .......");
+        th = scanner.next();
+        hod += 1;
+        if (th.equals("в_битву")) {
+            npc_1 = true;
+            Game_Outset.fight_npc_outset();
+        }
+        if (th.equals("стоп")) {
+            System.exit(0);
+        }
+        if (th.equals("в_деревню")) {
+            the_edge_of_the_village();
+            double r = Math.random() * 2;
+            a = (int) r;
+        }
+        if (th.equals("в_битву_с")) {
+            Outset_Location.v_bitvu_s_outset();
+        }
+        if (GG.gg.hp > 0) {
+            choice();
+        }
+    }
+
+    public static void v_bitvu_s_outset(){
+        System.out.println("\"мышь\" - отправиться к " + npc1.name);
+        System.out.println("\"змея\" - отправиться к " + npc2.name2);
+        System.out.println("\"черепаха\"  - отправиться к " + npc3.name3);
+        System.out.println("\"бездомный\"  - отправиться к " + npc4.name4);
+        System.out.println("\"бродяга\"  - отправиться к " + npc5.name5);
+        System.out.println("так к кому ты хочешь отправиться подраться? " );
+        th = scanner.next();
+        hod += 1;
+        if (th.equals("мышь")) {
+            npc_1 = true;
+            Game_Characters.npc1.hp = Game_Characters.npc1.max_hp;
+            Game_Outset.fight_npc_outset();
+        }
+        if (th.equals("змея")) {
+            npc_2 = true;
+            Game_Characters.npc2.hp2 = Game_Characters.npc2.max_hp2;
+            Game_Outset.fight_npc_outset();
+        }
+        if (th.equals("черепаха")) {
+            npc_3 = true;
+            Game_Characters.npc3.hp3 = Game_Characters.npc3.max_hp3;
+            Game_Outset.fight_npc_outset();
+        }
+        if (th.equals("бездомный")) {
+            npc_4 = true;
+            Game_Characters.npc4.hp4 = Game_Characters.npc4.max_hp4;
+            Game_Outset.fight_npc_outset();
+        }
+        if (th.equals("бродяга")) {
+            npc_5 = true;
+            Game_Characters.npc5.hp5 = Game_Characters.npc5.max_hp5;
+            Game_Outset.fight_npc_outset();
+        }
+        if (GG.gg.hp > 0) {
+            v_bitvu_s_outset();
+        }
+    }
+    public static void cheat(){
+        th = scanner.next();
+        if (th.equals("лвл")){
+            gg.lv = 8;
+            Gg.lv_1_p = true;
+            Gg.lv_2_p = true;
+            Gg.lv_3_p = true;
+            Gg.lv_4_p = true;
+            Gg.lv_5_p = true;
+            Gg.lv_6_p = true;
+            Gg.lv_7_p = true;
+            Gg.lv_8_p = true;
+            Gg.cheat = true;
+        }
+        if (th.equals("статы")){
+            gg.max_hp += 400;
+            gg.max_mp += 400;
+            gg.max_st += 400;
+            gg.dmg += 100;
+            gg.def += 50;
+            Gg.cheat = true;
+        }
+        if (th.equals("все")){
+            gg.lv = 8;
+            Gg.lv_1_p = true;
+            Gg.lv_2_p = true;
+            Gg.lv_3_p = true;
+            Gg.lv_4_p = true;
+            Gg.lv_5_p = true;
+            Gg.lv_6_p = true;
+            Gg.lv_7_p = true;
+            Gg.lv_8_p = true;
+            gg.max_hp += 400;
+            gg.max_mp += 400;
+            gg.max_st += 400;
+            gg.dmg += 100;
+            gg.def += 50;
+            Gg.cheat = true;
+        }
+        start_location(gg.name);
+    }
+}
