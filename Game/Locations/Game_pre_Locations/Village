@@ -1,0 +1,424 @@
+package Game.Locations.Game_pre_Locations;
+
+import java.util.Scanner;
+
+import static Game.Characters.GG.gg;
+import static Game.Characters.Game_Characters.qnpc_1;
+import static Game.Characters.Game_Characters.qnpc_2;
+import static Game.Characters.Game_Characters.qnpc_3;
+import static Game.Locations.Game_Locations.village;
+
+public class Village {
+
+    public static Scanner scanner = new Scanner(System.in);
+    public static String fh;
+
+    public static int poh = 0;
+    public static int pj = 0;
+
+    public static boolean poh_1_v_1 = false;
+    public static boolean poh_1_v_2 = false;
+    public static boolean poh_1_v_3 = false;
+    public static boolean poh_1_v_4 = false;
+    public static boolean poh_1_v_5 = false;
+
+    public static boolean poh_2_v_1 = false;
+    public static boolean poh_2_v_2 = false;
+    public static boolean poh_2_v_3 = false;
+    public static boolean poh_2_v_4 = false;
+    public static boolean poh_2_v_5 = false;
+
+    public static boolean poh_3_v_1 = false;
+    public static boolean poh_3_v_2 = false;
+    public static boolean poh_3_v_3 = false;
+    public static boolean poh_3_v_4 = false;
+    public static boolean poh_3_v_5 = false;
+
+    public static boolean poh_4_v_1 = false;
+    public static boolean poh_4_v_2 = false;
+    public static boolean poh_4_v_3 = false;
+    public static boolean poh_4_v_4 = false;
+    public static boolean poh_4_v_5 = false;
+
+    public static boolean poh_5_v_1 = false;
+    public static boolean poh_5_v_2 = false;
+    public static boolean poh_5_v_3 = false;
+    public static boolean poh_5_v_4 = false;
+    public static boolean poh_5_v_5 = false;
+
+
+
+    public static boolean zn_qnpc_1 = false;
+    public static boolean zn_qnpc_2 = false;
+    public static boolean zn_qnpc_3 = false;
+    public static boolean zn_qnpc_4 = false;
+    public static boolean dolg5 = false;
+
+
+
+
+    public static void village_tavern(){
+
+        pj = (int) (Math.random() * 5);
+
+        if (dolg5){
+            gg.money -= 5;
+        }
+
+        if (poh >= 1) {
+            System.out.println("");
+            System.out.println("");
+            System.out.println("Вы вошли в таверну....");
+            System.out.println("Ну по крайней мере это на таверну больше походило нежели на что-либо еще");
+            System.out.println("Где-то в углу проходили кулачные бои, кто-то просто пил, кто-то о чем-то громко спорил");
+            System.out.println("В общем как уже было сказано это таверна, правда чуть-чуть не прибранная");
+
+                        if (pj == 1 && gg.lv <= 2 && poh_1_v_1 == false){
+                            System.out.println("");
+                            System.out.println("");
+                            System.out.println("Вы споткнулись о порог, и задели впереди сидящего мужчину");
+                            System.out.println("У вас разразилась ссора, и вы хорошенько получили по лицу");
+                            gg.hp -= 15;
+                            System.out.println("Вы потеряли 15 очков жизней");
+                            System.out.println("");
+                            System.out.println("Впредь будете внимательнее");
+                            System.out.println("");
+                            poh_1_v_1 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+
+                        if (pj == 2 && zn_qnpc_1 && poh_1_v_2 == false){
+                            System.out.println("");
+                            System.out.println("");
+                            System.out.println("Вы споткнулись о порог, и задели впереди сидещего мужчину");
+                            System.out.println("У вас разразилась ссора так как он был изрядно пьян, но к счастью все обошлось");
+                            System.out.println("Ведь удача на вашей стороне, он оказался хорошим другом " + qnpc_1.name + "а " + qnpc_1.surname + "а ");
+                            System.out.println("Он даже угостил вас \"Вызимским Чемпионом\" (этот напиток чем-то напоминает пиво с нотками медовухи)");
+                            System.out.println("Подвыпив и поболтав вы узнали что его зовут " + qnpc_2.name2 + " " + qnpc_2.surname2);
+                            System.out.println("Так, что эта случайность оказалось одной из тех которые преподносят приятные сюрпризы");
+                            System.out.println("");
+                            System.out.println("Вас даже познакомили со здешним трактирщиком");
+                            System.out.println("Звать его " + qnpc_3.name3 + " " + qnpc_3.surname3);
+                            System.out.println("Теперь вы всегда можете рассчитывать на приятную кружечку выпивки");
+                            zn_qnpc_2 = true;
+                            zn_qnpc_3 = true;
+                            poh_1_v_2 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+
+                        if (pj == 3 && poh_1_v_3 == false){
+                            System.out.println("");
+                            System.out.println("Вы вошли в таверну, прошли до стойки, поприветствовали трактирщика");
+                            System.out.println("Казалось, что может идти лучше?");
+                            System.out.println("");
+                            System.out.println("Вам предложили выпить, вы согласились..");
+                            System.out.println("Но криворукость у вас в этот момент просто зашкаливала..... ");
+                            System.out.println("Вы уронили сосуд на пол, все содержимое вылилось.");
+                            System.out.println("Теперь вы должник");
+                            System.out.println("");
+                            System.out.println("И при следующей покупке вам придется оплатить пролитое вами спиртное");
+                            System.out.println("");
+                            dolg5 = true;
+                            poh_1_v_3 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+
+                        if (pj == 4 && poh_1_v_4 == false){
+                            System.out.println("");
+                            System.out.println("Вы вошли в таверну, прошли до стойки, поприветствовали трактирщика");
+                            System.out.println("Вам предложили выпить \"Вызимского Чемпиона\" за счет заведения");
+                            System.out.println("");
+                            System.out.println("/* Ну и правда кто может отказаться от халявы??!! /*");
+                            System.out.println("");
+                            System.out.println("Во время разговора вы быстро опустошили сосуд с алкоголем, как позже выяснили этот \"сосуд\" называется чаркой");
+                            System.out.println("Вы друг другу представились");
+                            System.out.println("Его звать " + qnpc_3.name3 + " " + qnpc_3.surname3 + " ");
+                            System.out.println("");
+                            System.out.println("Вы попробовали между делом у него спросить о вашей истории, но все тщетно");
+                            System.out.println("Он посоветовал поговорить с этими пьяницами за столами, ну или же к самому барону");
+                            System.out.println("");
+                            zn_qnpc_3 = true;
+                            poh_1_v_4 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+
+                        if (pj == 5 && poh_1_v_5 == false){
+                            System.out.println("");
+                            System.out.println("Вы просто прошли до трактирщика, напрямую спросили о том кто может что-либо знать о вашей истории");
+                            System.out.println("Вам лишь посоветовали поговорить с посетителями этого заведения");
+                            System.out.println("");
+                            System.out.println("Вобщем единственная зацепка, это барон и пьянчуги в таверне");
+                            System.out.println("Не густо.....");
+                            poh_1_v_5 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+            pj = 0;
+            System.out.println("");
+            System.out.println("Здесь также есть какой никакой ассортимент");
+            System.out.println("Посмотреть товар ?");
+            fh = scanner.next();
+            if (fh.equals("да")){
+                tavern_magazin();
+            }
+            if (fh.equals("нет")){
+                village();
+            }
+            }
+        if (poh >= 4){
+            System.out.println("Ну, по крайней мере, вы этому заведению уже не удивляетесь");
+            System.out.println("Но по прежнему это все вызывает у вас неприятные чувства");
+            System.out.println("");
+            System.out.println("");
+                        if (pj == 1 && zn_qnpc_1 == false && zn_qnpc_2 == false && zn_qnpc_3 == false && poh_2_v_1 == false){
+                            System.out.println("");
+                            System.out.println("");
+                            System.out.println("");
+                            poh_2_v_1 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+
+                        if (pj == 2 && zn_qnpc_2 == false && poh_2_v_2 == false){
+                            poh_2_v_2 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+
+                        if (pj == 3 && zn_qnpc_1 && zn_qnpc_2 && zn_qnpc_3 && poh_2_v_3 == false){
+                            poh_2_v_3 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+
+                        if (pj == 4 && zn_qnpc_1 && zn_qnpc_3 && poh_2_v_4 == false){
+                            poh_2_v_4 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+
+                        if (pj == 5 && zn_qnpc_1 && poh_2_v_5 == false){
+                            poh_2_v_5 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+            System.out.println("");
+            System.out.println("Здесь также есть какой никакой ассортимент");
+            System.out.println("Посмотреть товар ?");
+            pj = 0;
+            fh = scanner.next();
+            if (fh.equals("да")){
+                tavern_magazin();
+            }
+            if (fh.equals("нет")){
+                village();
+            }
+        }
+        if (poh >= 7){
+            System.out.println("\"Эээххх....и снова этот гадюшник\" подумали вы входя в таверну");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+                        if (pj == 1 && poh_3_v_1 == false){
+                            poh_3_v_1 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+
+                        if (pj == 2 && poh_3_v_2 == false){
+                            poh_3_v_2 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+
+                        if (pj == 3 && poh_3_v_3 == false){
+                            poh_3_v_3 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+
+                        if (pj == 4 && poh_3_v_4 == false){
+
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+
+                        if (pj == 5 && poh_3_v_5 == false){
+                            poh_3_v_5 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+            System.out.println("");
+            System.out.println("Здесь также есть какой никакой ассортимент");
+            System.out.println("Посмотреть товар ?");
+            pj = 0;
+            fh = scanner.next();
+            if (fh.equals("да")){
+                tavern_magazin();
+            }
+            if (fh.equals("нет")){
+                village();
+            }
+        }
+        if (poh >= 12){
+            System.out.println("А это заведение ничего такое, даже приятные воспоминания навивает");
+            System.out.println("А некоторые и вовсе, узнают, здороваются, жизнь налаживается,");
+            System.out.println("особенно когда вам уже наливают чарку вашего любимого \"Вызимского Чемпиона\"......");
+            System.out.println("");
+            System.out.println("");
+                        if (pj == 1 && poh_4_v_1 == false){
+                            poh_4_v_1 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+
+                        if (pj == 2 && poh_4_v_2 == false){
+                            poh_4_v_2 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+
+                        if (pj == 3 && poh_4_v_3 == false){
+                            poh_4_v_3 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+
+                        if (pj == 4 && poh_4_v_4 == false){
+                            poh_4_v_4 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+
+                        if (pj == 5 && poh_4_v_5 == false){
+                            poh_4_v_5 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+            System.out.println("");
+            System.out.println("Здесь также есть какой никакой ассортимент");
+            System.out.println("Посмотреть товар ?");
+            pj = 0;
+            fh = scanner.next();
+            if (fh.equals("да")){
+                tavern_magazin();
+            }
+            if (fh.equals("нет")){
+                village();
+            }
+        }
+        if (poh >= 26){
+            System.out.println("Бывает, так, что даже на халяву удается пропустить чарку другую..");
+            System.out.println("Да и работенку кто не пыльную подкинет..");
+            System.out.println("");
+            System.out.println("");
+                        if (pj == 1 && poh_5_v_1 == false){
+                            poh_5_v_1 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+
+                        if (pj == 2 && poh_5_v_2 == false){
+                            poh_5_v_2 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+
+                        if (pj == 3 && poh_5_v_3 == false){
+                            poh_5_v_3 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+
+                        if (pj == 4 && poh_5_v_4 == false){
+                            poh_5_v_4 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+                        if (pj == 5 && poh_5_v_5 == false){
+                            poh_5_v_5 = true;
+                        }else{
+                            pj = 0;
+                            pj = (int) (Math.random() * 5);
+                            village_tavern();
+                        }
+        }
+        System.out.println("");
+        System.out.println("Здесь также есть какой никакой ассортимент");
+        System.out.println("Посмотреть товар ?");
+        pj = 0;
+        fh = scanner.next();
+        if (fh.equals("да")){
+            tavern_magazin();
+        }
+        if (fh.equals("нет")){
+            village();
+        }
+    }
+    public static void tavern_magazin(){
+
+
+
+    }
+    public static void village_sleep(){
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        fh = scanner.next();
+    }
+}
