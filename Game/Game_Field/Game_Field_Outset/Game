@@ -1,0 +1,293 @@
+package Game.Game_Field.Game_Field_Outset;
+
+import Game.Characters.GG;
+import Game.Characters.Game_Characters;
+import Game.Game_Field.Game_Field_Outset.Game_Fight_Win_Outset;
+import Game.Locations.Game_Locations;
+
+import java.util.Random;
+import java.util.Scanner;
+
+import static Game.Characters.GG.gg;
+import static Game.Locations.Game_pre_Locations.Outset_Location.choice;
+
+
+public class Game_Outset {
+
+    public static boolean npc_1 = false;
+    public static boolean npc_2 = false;
+    public static boolean npc_3 = false;
+    public static boolean npc_4 = false;
+    public static boolean npc_5 = false;
+    public static boolean npc_6 = false;
+    public static boolean npc_7 = false;
+    public static boolean npc_8 = false;
+    public static boolean npc_9 = false;
+    public static boolean npc_10 = false;
+
+    public static int hod = 0;
+
+
+    public static void main(String[] args) {
+        System.out.println("/* Странный голос доносящийся словно из головы /*");
+        System.out.println("Как тебя зовут");
+        string(gg.name);
+    }
+
+    public static String string(String gg_name) {
+        Scanner scanner = new Scanner(System.in);
+        gg.name = scanner.next();
+        Game_Locations.start_location(gg.name);
+        return gg.name;
+    }
+
+    public static void help() {
+        System.out.println(" ");
+        System.out.println("чтож... " + gg.name + " слушай... ");
+        System.out.println(" \"выпад\" - для атаки");
+        System.out.println(" \"сильный_выпад\" - для мощной атаки");
+        System.out.println(" \"защита\" - чтобы переждать и пополнить силы ");
+        System.out.println(" \"свалить\" - чтобы свалить (как это не странно)");
+        System.out.println(" \"ну_нахер\" - самоубийство");
+        System.out.println(" ");
+        System.out.println(" Также в этой игре есть такая вещь как критический удар, и даже случается так, что он иногда встречается");
+        System.out.println("Но я бы не сильно на него надеялся ");
+        System.out.println("Ибо даже я не знаю как это работает ");
+        System.out.println(" ");
+        System.out.println("Ну все ты меня не слышал, я тебе не помогал... ");
+        System.out.println(" ");
+        hod += 1;
+        if (hod != 0){
+            if (gg.hp < gg.max_hp) {
+                gg.hp = gg.hp + (gg.max_hp / 100) * 5;
+            }
+            if (gg.mp < gg.max_mp){
+                gg.mp = gg.mp + (gg.max_mp / 100) * 5;
+            }
+            if (gg.st < gg.max_st){
+                gg.st = gg.st + (gg.max_st / 100) * 5;
+            }
+        }
+        if (npc_6 == false && npc_7 == false && npc_8 == false && npc_9 == false && npc_10 == false ) {
+            fight_npc_outset();
+        }
+        if (npc_1 == false && npc_2 == false && npc_3 == false && npc_4 == false && npc_5 == false ) {
+
+        }
+    }
+
+    public static void fight_npc_outset(){
+            if (npc_1 == true) {
+                System.out.println("Ваш противник : " + Game_Characters.npc1.name);
+                System.out.println("Здоровье противника : " + Game_Characters.npc1.hp);
+                System.out.println("Защита противника : " + Game_Characters.npc1.def);
+            }
+            if (npc_2 == true) {
+                System.out.println("Ваш противник : " + Game_Characters.npc2.name2);
+                System.out.println("Здоровье противника : " + Game_Characters.npc2.hp2);
+                System.out.println("Защита противника : " + Game_Characters.npc2.def2);
+            }
+            if (npc_3) { ;
+                System.out.println("Ваш противник : " + Game_Characters.npc3.name3);
+                System.out.println("Здоровье противника : " + Game_Characters.npc3.hp3);
+                System.out.println("Защита противника : " + Game_Characters.npc3.def3);
+            }
+            if (npc_4) {
+                System.out.println("Ваш противник : " + Game_Characters.npc4.name4);
+                System.out.println("Здоровье противника : " + Game_Characters.npc4.hp4);
+                System.out.println("Защита противника : " + Game_Characters.npc4.def4);
+            }
+            if (npc_5) {
+                System.out.println("Ваш противник : " + Game_Characters.npc5.name5);
+                System.out.println("Здоровье противника : " + Game_Characters.npc5.hp5);
+                System.out.println("Защита противника : " + Game_Characters.npc5.def5);
+            }
+        System.out.println("Ваше здоровье : " + gg.hp);
+        System.out.println("Ваша выносливость " + gg.st);
+        System.out.println("\"выпад\"");
+        System.out.println(" ");
+                fight_proccess_outset();
+    }
+        public static void fight_proccess_outset(){
+            boolean krit;
+            Scanner scanner = new Scanner(System.in);
+            Random random = new Random();
+            krit =  random.nextBoolean();
+            String hit;
+            System.out.println("\"помощь\"");
+            System.out.println();
+            hit = scanner.next();
+                if (hit.equals("выпад")){
+                    gg.st -= 15;
+                    if (npc_1) {
+                        gg.hp = gg.hp - ((Game_Characters.npc1.dmg + Math.random() * 10) - gg.def);
+                        Game_Characters.npc1.hp = Game_Characters.npc1.hp - (gg.dmg - (Game_Characters.npc1.def + Math.random() * 5));
+                    }
+                    if (npc_2){
+                        gg.hp = gg.hp - ((Game_Characters.npc2.dmg2 + Math.random() * 15) - gg.def);
+                        Game_Characters.npc2.hp2 = Game_Characters.npc2.hp2 - (gg.dmg - (Game_Characters.npc2.def2 + Math.random() * 8));
+                    }
+                    if (npc_3){
+                        gg.hp = gg.hp - ((Game_Characters.npc3.dmg3 + Math.random() * 20) - gg.def);
+                        Game_Characters.npc3.hp3 = Game_Characters.npc3.hp3 - (gg.dmg - (Game_Characters.npc3.def3 + Math.random() * 11));
+                    }
+                    if (npc_4){
+                        gg.hp = gg.hp - ((Game_Characters.npc4.dmg4 + Math.random() * 25) - gg.def);
+                        Game_Characters.npc4.hp4 = Game_Characters.npc4.hp4 - (gg.dmg - (Game_Characters.npc4.def4 + Math.random() * 10));
+                    }
+                    if (npc_5){
+                        gg.hp = gg.hp - ((Game_Characters.npc5.dmg5 + Math.random() * 30) - gg.def);
+                        Game_Characters.npc5.hp5 = Game_Characters.npc5.hp5 - (gg.dmg - (Game_Characters.npc5.def5 + Math.random() * 11));
+                    }
+                        if (krit){
+                            if (npc_1) {
+                                Game_Characters.npc1.hp = Game_Characters.npc1.hp - ((gg.dmg + Math.random() * 10) - Game_Characters.npc1.def);
+                            }
+                            if (npc_2){
+                                Game_Characters.npc2.hp2 = Game_Characters.npc2.hp2 - ((gg.dmg + Math.random() * 15) - Game_Characters.npc2.def2);
+                            }
+                            if (npc_3){
+                                Game_Characters.npc3.hp3 = Game_Characters.npc3.hp3 - ((gg.dmg + Math.random() * 20) - Game_Characters.npc3.def3);
+                            }
+                            if (npc_4){
+                                Game_Characters.npc4.hp4 = Game_Characters.npc4.hp4 - ((gg.dmg + Math.random() * 25) - Game_Characters.npc4.def4);
+                            }
+                            if (npc_5){
+                                Game_Characters.npc5.hp5 = Game_Characters.npc5.hp5 - ((gg.dmg + Math.random() * 30) - Game_Characters.npc5.def5);
+                            }
+                            System.out.println(" ");
+                            System.out.println(" ");
+                            System.out.println("!!!Криит!!!!");
+                            System.out.println(" ");
+                        }
+                }
+                if (hit.equals("сильный_выпад")){
+                    gg.st -= 25;
+                    if (npc_1) {
+                        gg.hp = gg.hp - ((Game_Characters.npc1.dmg + Math.random() * 15) - gg.def);
+                        Game_Characters.npc1.hp = Game_Characters.npc1.hp - ((gg.dmg + Math.random() * 20) - Game_Characters.npc1.def);
+                    }
+                    if (npc_2){
+                        gg.hp = gg.hp - ((Game_Characters.npc2.dmg2 + Math.random() * 20) - gg.def);
+                        Game_Characters.npc2.hp2 = Game_Characters.npc2.hp2 - ((gg.dmg + Math.random() * 30) - Game_Characters.npc2.def2);
+                    }
+                    if (npc_3){
+                        gg.hp = gg.hp - ((Game_Characters.npc3.dmg3 + Math.random() * 25) - gg.def);
+                        Game_Characters.npc3.hp3 = Game_Characters.npc3.hp3 - ((gg.dmg + Math.random() * 40) - Game_Characters.npc3.def3);
+                    }
+                    if (npc_4){
+                        gg.hp = gg.hp - ((Game_Characters.npc4.dmg4 + Math.random() * 30) - gg.def);
+                        Game_Characters.npc4.hp4 = Game_Characters.npc4.hp4 - ((gg.dmg + Math.random() * 50) - Game_Characters.npc4.def4);
+                    }
+                    if (npc_5){
+                        gg.hp = gg.hp - ((Game_Characters.npc5.dmg5 + Math.random() * 35) - gg.def);
+                        Game_Characters.npc5.hp5 = Game_Characters.npc5.hp5 - ((gg.dmg + Math.random() * 60) - Game_Characters.npc5.def5);
+                    }
+                        if ( krit){
+                            if (npc_1) {
+                                Game_Characters.npc1.hp = Game_Characters.npc1.hp - (gg.dmg - Game_Characters.npc1.def + (Math.random() * 40));
+                            }
+                            if (npc_2){
+                                Game_Characters.npc2.hp2 = Game_Characters.npc2.hp2 - (gg.dmg - Game_Characters.npc2.def2 + (Math.random() * 50));
+                            }
+                            if (npc_3){
+                                Game_Characters.npc3.hp3 = Game_Characters.npc3.hp3 - (gg.dmg - Game_Characters.npc3.def3 + (Math.random() * 60));
+                            }
+                            if (npc_4){
+                                Game_Characters.npc4.hp4 = Game_Characters.npc4.hp4 - (gg.dmg - Game_Characters.npc4.def4 + (Math.random() * 70));
+                            }
+                            if (npc_5){
+                                Game_Characters.npc5.hp5 = Game_Characters.npc5.hp5 - (gg.dmg - Game_Characters.npc5.def5 + (Math.random() * 80));
+                            }
+                            System.out.println(" ");
+                            System.out.println(" ");
+                            System.out.println("!!!Mega Krit!!!!");
+                            System.out.println(" ");
+                    }
+                }
+                if (hit.equals("защита")){
+                    gg.st += 10;
+                }
+                if (hit.equals("свалить")){
+                    choice();
+                    npc_1 = false;
+                    npc_2 = false;
+                    npc_3 = false;
+                    npc_4 = false;
+                    npc_5 = false;
+                    npc_6 = false;
+                    npc_7 = false;
+                    npc_8 = false;
+                    npc_9 = false;
+                    npc_10 = false;
+                }
+                if (hit.equals("помощь")){
+                    help();
+                }
+
+                hod += 1;
+                if (hod != 0){
+                    if (gg.hp < gg.max_hp) {
+                        gg.hp = gg.hp + (gg.max_hp / 100) * 5;
+                    }
+                    if (gg.mp < gg.max_mp){
+                        gg.mp = gg.mp + (gg.max_mp / 100) * 5;
+                    }
+                    if (gg.st < gg.max_st){
+                        gg.st = gg.st + (gg.max_st / 100) * 5;
+                    }
+                }
+                if (npc_1 && GG.gg.hp > 0) {
+                    if (Game_Characters.npc1.hp > 0) {
+                        fight_npc_outset();
+                    } else {
+                        npc_1 = false;
+                        Game_Fight_Win_Outset.npc_1_win = true;
+                        Game_Fight_Win_Outset.npc1_5_win();
+                    }
+                }
+                if (npc_2 && GG.gg.hp > 0) {
+                    if (Game_Characters.npc2.hp2 > 0) {
+                        fight_npc_outset();
+                    } else {
+                        npc_2 = false;
+                        Game_Fight_Win_Outset.npc_2_win = true;
+                        Game_Fight_Win_Outset.npc1_5_win();
+                    }
+                }
+                if (npc_3 && GG.gg.hp > 0) {
+                    if (Game_Characters.npc3.hp3 > 0) {
+                        fight_npc_outset();
+                    } else {
+                        npc_3 = false;
+                        Game_Fight_Win_Outset.npc_3_win = true;
+                        Game_Fight_Win_Outset.npc1_5_win();
+                    }
+                }
+                if (npc_4 && GG.gg.hp > 0) {
+                    if (Game_Characters.npc4.hp4 > 0) {
+                        fight_npc_outset();
+                    } else {
+                        npc_4 = false;
+                        Game_Fight_Win_Outset.npc_4_win = true;
+                        Game_Fight_Win_Outset.npc1_5_win();
+                    }
+                }
+                if (npc_5 && GG.gg.hp > 0) {
+                    if (Game_Characters.npc5.hp5 > 0) {
+                        fight_npc_outset();
+                    } else {
+                        npc_5 = false;
+                        Game_Fight_Win_Outset.npc_5_win = true;
+                        Game_Fight_Win_Outset.npc1_5_win();
+                    }
+                }
+
+                    if (gg.hp <= 0){
+                        System.exit(1);
+                    }else{
+                        fight_npc_outset();
+                    }
+            }
+
+}
