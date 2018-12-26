@@ -1,0 +1,47 @@
+package Game.Locations.Game_pre_Locations;
+
+import Game.Characters.GG;
+import Game.Locations.Game_Locations;
+
+import java.util.Scanner;
+
+import static Game.Game_Field.Game_Field_Outset.Game_Outset.hod;
+import static Game.Locations.Game_Locations.new_game;
+import static Game.Locations.Game_Locations.rename;
+import static Game.Locations.Game_Locations.village;
+
+public class The_Edge_Of_The_Village {
+
+    static Scanner scanner = new Scanner(System.in);
+    public static String ph;
+
+    public static void the_rename_point() {
+
+        System.out.println(" \"переименовать_гг\" чтобы переименовать героя");
+        ph = scanner.next();
+        hod += 1;
+        if (ph.equals("переименовать_гг")) {
+            rename = false;
+            nami();
+        }else {
+            if(new_game) {
+                rename = false;
+                Game_Locations.the_edge_of_the_village();
+            }else {
+                rename = false;
+                village();
+            }
+        }
+    }
+
+    public static void nami() {
+        Scanner scanner = new Scanner(System.in);
+        GG.gg.name = scanner.next();
+        hod += 1;
+        if (new_game) {
+            Game_Locations.the_edge_of_the_village();
+        } else {
+            village();
+        }
+    }
+}
