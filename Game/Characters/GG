@@ -1,9 +1,5 @@
 package Game.Characters;
 
-import static Game.Characters.Npc_Power_Up.lv_up;
-import Game.Game_Fight_Win;
-import Game.Game;
-
 public class GG {
 
     public static Gg gg = new Gg();
@@ -21,6 +17,7 @@ public class GG {
         public static double max_st;
         public static double xp;
         public static int lv;
+        public static double money;
 
         public static boolean lv_1 = false;
         public static boolean lv_2 = false;
@@ -33,6 +30,18 @@ public class GG {
         public static boolean lv_9 = false;
         public static boolean lv_10 = false;
 
+        public static boolean lv_1_p = false;
+        public static boolean lv_2_p = false;
+        public static boolean lv_3_p = false;
+        public static boolean lv_4_p = false;
+        public static boolean lv_5_p = false;
+        public static boolean lv_6_p = false;
+        public static boolean lv_7_p = false;
+        public static boolean lv_8_p = false;
+        public static boolean lv_9_p = false;
+        public static boolean lv_10_p = false;
+
+        public static boolean cheat = false;
 
         public Gg() {
             gg.name = null;
@@ -46,6 +55,7 @@ public class GG {
             gg.dmg = 10.0;
             gg.xp = 0.0;
             gg.lv = 0;
+            gg.money = 10.0;
         }
 
         public static void level_up(double xp) {
@@ -58,6 +68,7 @@ public class GG {
                     gg.def += 0.2;
                     gg.dmg += 0.5;
                     lv_1 = true;
+                    lv_1_p = true;
                     Npc_Power_Up.npc_power();
                 }
             }
@@ -71,6 +82,7 @@ public class GG {
                     gg.dmg += 5.5;
                     lv_1 = false;
                     lv_2 = true;
+                    lv_2_p = true;
                     Npc_Power_Up.npc_power();
                 }
             }
@@ -84,6 +96,7 @@ public class GG {
                     gg.dmg += 7.5;
                     lv_2 = false;
                     lv_3 = true;
+                    lv_3_p = true;
                     Npc_Power_Up.npc_power();
                 }
             }
@@ -97,6 +110,7 @@ public class GG {
                     gg.dmg += 3.5;
                     lv_3 = false;
                     lv_4 = true;
+                    lv_4_p = true;
                     Npc_Power_Up.npc_power();
                 }
             }
@@ -110,6 +124,7 @@ public class GG {
                     gg.dmg += 5.0;
                     lv_4 = false;
                     lv_5 = true;
+                    lv_5_p = true;
                     Npc_Power_Up.npc_power();
                 }
             }
@@ -123,6 +138,7 @@ public class GG {
                     gg.dmg += 6.5;
                     lv_5 = false;
                     lv_6 = true;
+                    lv_6_p = true;
                     Npc_Power_Up.npc_power();
                 }
             }
@@ -136,6 +152,7 @@ public class GG {
                     gg.dmg += 12.5;
                     lv_6 = false;
                     lv_7 = true;
+                    lv_7_p = true;
                     Npc_Power_Up.npc_power();
                 }
             }
@@ -149,6 +166,7 @@ public class GG {
                     gg.lv += 1;
                     lv_7 = false;
                     lv_8 = true;
+                    lv_8_p = true;
                     Npc_Power_Up.npc_power();
                 }
             }
